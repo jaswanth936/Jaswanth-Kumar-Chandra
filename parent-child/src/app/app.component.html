@@ -1,0 +1,31 @@
+<h3>{{title}}</h3>
+<person-app (updateEmployee) ="saveData($event)" [student] ="studentObj"> </person-app>
+<p>{{studentObj.fname + ' '+ studentObj.lname}} </p>
+<p>{{fullName}}</p>
+
+<br><hr><br>
+
+<p [style.color] = "result > 30 ? 'blue' : 'green'"> Hello Color World! </p>
+<p bind-style.color = "result > 30 ? 'blue' : 'green'"> Hello Color World! </p>
+<p style.color = "{{result > 30 ? 'blue' : 'green'}}"> Hello Color World! </p>
+<button 
+     [style.background-color] = "colorFlag ? 'cyan' : 'grey'"
+     [style.color] = "isRed(8) ? 'red' : 'black'" > Button </button>
+
+<div [style.font-size.em] = "isSmall ? small/8 : big/8" > Font Size Test with em</div>
+<div [style.font-size.px] = "!isSmall ? small : big" > Font Size Test with px</div>
+<div [style.font-size.pt] = "isSmall ? small : big" > Font Size Test with pt</div>
+<div [style.font-size.%] = "!isSmall ? small * 10: big * 10" > Font Size Test with %</div>
+	 
+<div [style.background-image] = "isBackgroundRed ? 'url(\'images/red.gif\')' : 'url(\'images/green.gif\')'">
+	Style Binding Example
+</div>
+
+<br/><br/>
+<div [ngStyle]="allRequiredStyles('one')">
+	NgStyle Example
+</div>
+<br/><br/>
+<div bind-ngStyle="allRequiredStyles('two')">
+	NgStyle Example
+</div> 
